@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+    <ul>
+        {% for tarefa in lista %}
+        <li>
+            <h2>{{ tarefa.tarefa }}</h2>
+            <p>{{ tarefa.descricao }}</p>
+            <p>Status: {% if tarefa.status %} Concluída {% else %} Pendente {% endif %}</p>
+            <p>Data de Criação: {{ tarefa.data|date:"d/m/Y H:i" }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
