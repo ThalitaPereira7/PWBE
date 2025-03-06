@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Voce tem certeza ? {{ livro.nome}}</h1>
+    <form action="post">
+        {% csrf_token %}
+        <button type="submit"> Sim </button>
+    </form>
+    <a href="{% url 'livro_read' %}"> não</a>
+</body>
+</html>

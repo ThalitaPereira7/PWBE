@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="{% url 'livro_create' %}"> Criar um novo item</a>
+
+    <ul>
+        {% for livro in livros %}
+        <li>
+            {{ livro.nome}} - {{livro.descricao}}
+            <a href="{% url 'livro_uptade' item.pk %}"> Editar</a>
+            <a href="{% url 'livro_delete' item.pk %}">deletar</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    
+</body>
+</html>
