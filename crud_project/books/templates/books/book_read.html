@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+</head>
+<body>
+
+    <h1>Biblioteca Virtual</h1>
+
+    <a href="{% url 'book_create' %}">Cadastrar um novo livro</a>
+
+    <ul>
+        {% for book in books %}  
+        <li>
+            <strong>Título:</strong> {{ book.titulo }} <br>
+            <strong>Autor:</strong> {{ book.autor }} <br>
+            <strong>Ano de Publicação:</strong> {{ book.ano_publicacao }} <br>
+            <strong>Descrição:</strong> {{ book.descricao }} <br>
+
+            <a href="{% url 'book_update' book.pk %}">Editar</a>  
+            <a href="{% url 'book_delete' book.pk %}">Deletar</a>  
+        </li>
+        {% empty %}
+            <li>Não há livros cadastrados.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

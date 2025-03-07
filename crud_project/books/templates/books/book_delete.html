@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Exclusão</title>
+</head>
+<body>
+    <h1>Você tem certeza que deseja excluir o livro "{{ book.titulo }}"?</h1>
+    
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sim</button>
+    </form>
+    
+    
+    <a href="{% url 'book_read' %}">Não</a>
+</body>
+</html>
